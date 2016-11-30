@@ -22,19 +22,19 @@ It’s important to note that Outgoing WebHooks do not send any information abou
 
 RAILS SETUP:
 
-in config/routes.rb
-  Rails.application.routes.draw do
-  resources :slack_webhooks
-  end
-in app/controllers/slack_webhooks_controller.rb
-      class SlackWebhooksController &lt; ApplicationController
-      def create
-        # do something cool with the params
-        # we used params[:team_domain], params[:token] for authentication, 
-        # and params[:text] and params[:trigger_word] to create the post
-        #
-        # send response back to Slack
-        render json: { text: "Some message you want to include" }
-      end
-    end
+in config/routes.rb:
+>  Rails.application.routes.draw do
+>  resources :slack_webhooks
+>  end
+in app/controllers/slack_webhooks_controller.rb:
+     > class SlackWebhooksController &lt; ApplicationController
+     > def create
+     >   # do something cool with the params
+     >   # we used params[:team_domain], params[:token] for authentication, 
+     >  # and params[:text] and params[:trigger_word] to create the post
+     >  #
+     >  # send response back to Slack
+     >  render json: { text: "Some message you want to include" }
+     >end
+    >end
 
